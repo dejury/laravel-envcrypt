@@ -26,7 +26,9 @@ Copy the corresponding config file to your laravel directory by executing:
 php artisan vendor:publish --provider="Dejury\Envcrypt\EnvcryptServiceProvider"
 ```
 
-It is highly recommended to use another encryption key then the default application key. Also it is highly recommended that the encryption key is not stored in version control. You can set the available environments inside the config, this is for letting the application know which environments to save if you choose to save all environments.
+It is highly recommended to use another encryption key then the default application key. Also it is highly recommended that the encryption key is not stored in version control. You can set the available environments inside the config, this is for letting the application know which environments to save if you choose to save all environments.  
+
+By default the encrypted files are stored in the root of your laravel project, you can change this in the config.
 
 ## Usage
 

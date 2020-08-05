@@ -8,7 +8,8 @@
 This package gives you the possibility to store certain values you would normally store in your .env file in an encrypted file which can be part of your version control. It supports the storage for multiple environments and automatically loads the variables for the current environment. They will be available in the env() function.
 
 Package inspired by:
-[BeyondCode laravel-credentials](https://github.com/beyondcode/laravel-credentials)
+
+[BeyondCode laravel-credentials](https://github.com/beyondcode/laravel-credentials)  
 [Stechstudio Laravel Env Security](https://github.com/stechstudio/laravel-env-security)
 
 ## Installation
@@ -19,10 +20,33 @@ You can install the package via composer:
 composer require dejury/envcrypt
 ```
 
+Copy the corresponding config file to your laravel directory by executing:
+
+```bash
+php artisan vendor:publish --provider="Dejury\Envcrypt\EnvcryptServiceProvider"
+```
+
+It is highly recommended to use another encryption key then the default application key. Also it is highly recommended that the encryption key is not stored in version control. You can set the available environments inside the config, this is for letting the application know which environments to save if you choose to save all environments.
+
 ## Usage
 
 ``` php
-// Usage description here
+php artisan envcrypt:add KEY_NAME
+```
+Will save OR edit the corresponding KEY_NAME with the value that will be asked during execution of the command. You can also set an environment or choose to store to all environments.
+
+``` php
+php artisan envcrypt:remove KEY_NAME
+```
+Will REMOVE the corresponding KEY_NAME. You can also set an environment or choose to remove to all environments.
+
+``` php
+php artisan envcrypt:view ENVIRONMENT
+```
+See all the stored values for that ENVIRONMENT. Will show in JSON format.
+
+``` php
+$encryptedEnv = env('KEY_NAME'); // just like you are used to in Laravel
 ```
 
 ### Testing
@@ -30,6 +54,13 @@ composer require dejury/envcrypt
 ``` bash
 composer test
 ```
+
+### Is this package secure?
+The goal of this package is to store certain ENV vars encrypted. For example API_KEYS. You can safely store them in version control and it will automatically be available on the server where it is deployed.  
+This makes it easier to deploy ENV vars through all of your different environments.  
+
+Of course: this package uses a key to encrypt and decrypt the data. The key should be stored securely, to prevent decryption by unwanted persons. Whenever somebody has access to the server it is always possible to see the decrypted values by using the artisan commands or to manually decrypt the files.
+This package is always better to use in version control then storing PLAIN values.
 
 ### Changelog
 

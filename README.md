@@ -1,4 +1,4 @@
-# Multiple environment secured variables for Laravel
+# Laravel Envcrypt: secured env variables for multiple environments
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/dejury/envcrypt.svg?style=flat-square)](https://packagist.org/packages/dejury/envcrypt)
 [![Build Status](https://img.shields.io/travis/dejury/envcrypt/master.svg?style=flat-square)](https://travis-ci.org/dejury/envcrypt)

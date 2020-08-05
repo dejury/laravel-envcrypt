@@ -1,0 +1,54 @@
+{
+  "name": "dejury/laravel-envcrypt",
+  "description": "This package will help you to keep different .env files within your version management. Of course, it is possible to encrypt the files so they can be safely pushed to your version control.",
+  "keywords": [
+    "dejury",
+    "envcrypt"
+  ],
+  "homepage": "https://github.com/dejury/envcrypt",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Jonathan Hafkamp",
+      "email": "jonathan@hafka.mp",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.2.5",
+    "illuminate/encryption": "^7.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^5.0",
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dejury\\Envcrypt\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dejury\\Envcrypt\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Dejury\\Envcrypt\\EnvcryptServiceProvider"
+      ],
+      "aliases": {
+        "Envcrypt": "Dejury\\Envcrypt\\EnvcryptFacade"
+      }
+    }
+  }
+}

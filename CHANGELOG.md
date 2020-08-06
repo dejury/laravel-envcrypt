@@ -2,6 +2,6 @@
 
 All notable changes to `envcrypt` will be documented in this file
 
-## 1.0.0 - 201X-XX-XX
+## 1.0.0 - 2020-08-05
 
-- initial release
+- The initial release

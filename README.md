@@ -1,7 +1,7 @@
 # Laravel Envcrypt: secured env variables for multiple environments
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/dejury/envcrypt.svg?style=flat-square)](https://packagist.org/packages/dejury/envcrypt)
-[![Total Downloads](https://img.shields.io/packagist/dt/dejury/envcrypt.svg?style=flat-square)](https://packagist.org/packages/dejury/envcrypt)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/dejury/laravel-envcrypt?style=flat-square)](https://packagist.org/packages/dejury/envcrypt)
+[![Total Downloads](https://img.shields.io/packagist/dt/dejury/laravel-envcrypt?style=flat-square)](https://packagist.org/packages/dejury/envcrypt)
 
 This package gives you the possibility to store certain values you would normally store in your .env file in an encrypted file which can be part of your version control. It supports the storage for multiple environments and automatically loads the variables for the current environment. They will be available in the env() function.
 
@@ -15,7 +15,7 @@ Package inspired by:
 You can install the package via composer:
 
 ```bash
-composer require dejury/envcrypt
+composer require dejury/laravel-envcrypt
 ```
 
 Copy the corresponding config file to your laravel directory by executing:
